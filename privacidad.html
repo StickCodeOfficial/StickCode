@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — StickCode</title>
+<meta name="description" content="Políticas de privacidad de las apps de StickCode, incluyendo MyNomiApp.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav solid">
+  <a href="index.html" class="nav-logo"><img src="assets/logostickcode.png" alt="StickCode"></a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="apps.html">Apps</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</nav>
+
+<header class="page-header wrap">
+  <h1>Política de Privacidad</h1>
+  <p>Cada app de StickCode tiene su propia sección aquí abajo. Elige la que te interesa.</p>
+</header>
+
+<section class="wrap">
+  <div class="privacy-nav">
+    <a href="#mynomiapp">MyNomiApp</a>
+  </div>
+
+  <article class="privacy-app" id="mynomiapp">
+    <h2><img src="assets/mynomiapplogoblanco.png" alt="MyNomiApp"></h2>
+    <div class="privacy-updated">Última actualización: septiembre de 2026</div>
+
+    <p>MyNomiApp está diseñada para funcionar completamente en tu teléfono. Esta política explica, en términos simples, qué información maneja la app y qué hace con ella.</p>
+
+    <h3>Qué datos se almacenan</h3>
+    <p>MyNomiApp guarda la siguiente información únicamente en tu dispositivo:</p>
+    <ul>
+      <li>Datos de tu contrato laboral (salario, jornada, frecuencia de pago) que tú mismo ingresas.</li>
+      <li>Registros de turnos que agregas en el calendario (horas de entrada, salida, extras).</li>
+      <li>Bonos u otros ingresos que registres manualmente.</li>
+      <li>Preferencias de la app: tema visual elegido y configuración de notificaciones.</li>
+    </ul>
+
+    <h3>Dónde se guardan estos datos</h3>
+    <p>Toda esta información se almacena localmente en tu teléfono, usando el almacenamiento privado de la app (DataStore de Android). MyNomiApp no tiene servidor propio ni base de datos externa: nada de lo que ingreses se envía a StickCode ni a ningún tercero.</p>
+
+    <h3>Notificaciones</h3>
+    <p>Si activas los recordatorios diarios, la app programa una notificación local en tu propio dispositivo (usando WorkManager de Android). Esto no requiere ni transmite ningún dato personal.</p>
+
+    <h3>Terceros</h3>
+    <p>MyNomiApp no comparte información con terceros, no incluye herramientas de análisis (analytics), ni redes publicitarias, porque no se conecta a internet para ninguna de sus funciones.</p>
+
+    <h3>Eliminar tus datos</h3>
+    <p>Puedes borrar toda la información de la app en cualquier momento desde Ajustes del sistema Android → Aplicaciones → MyNomiApp → Almacenamiento → Borrar datos, o simplemente desinstalando la app.</p>
+
+    <h3>Menores de edad</h3>
+    <p>MyNomiApp no está dirigida a menores de edad y no recopila intencionalmente información de menores.</p>
+
+    <h3>Cambios a esta política</h3>
+    <p>Si esta política cambia, la fecha de "Última actualización" al inicio de esta sección se actualizará. Te recomiendo revisarla periódicamente.</p>
+
+    <h3>Contacto</h3>
+    <p>Para preguntas sobre esta política, escribe a <a href="mailto:stickcodeofficial@gmail.com" style="color:var(--white); border-bottom:1px solid var(--gray-3);">stickcodeofficial@gmail.com</a>.</p>
+  </article>
+</section>
+
+<footer class="wrap">
+  <span>© <span id="year"></span> StickCode</span>
+  <a href="privacidad.html">Política de Privacidad</a>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apps — StickCode</title>
+<meta name="description" content="Apps construidas por StickCode: MyNomiApp y próximos proyectos.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav solid">
+  <a href="index.html" class="nav-logo"><img src="assets/logostickcode.png" alt="StickCode"></a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="apps.html">Apps</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</nav>
+
+<header class="page-header wrap">
+  <h1>Apps</h1>
+  <p>Un desarrollador, un problema a la vez. Esto es lo que he construido y lo que viene.</p>
+</header>
+
+<section class="wrap">
+  <div class="app-row">
+    <div>
+      <img src="assets/mynomiapplogoblanco.png" alt="MyNomiApp" class="app-logo">
+      <span class="app-status">Disponible</span>
+    </div>
+    <div class="app-desc">
+      Calendario de turnos, cálculo de horas extra y recargos, y liquidación de nómina quincenal o mensual — hecho a la medida de la normativa laboral colombiana. Incluye recordatorios diarios y widgets de pantalla de inicio para registrar el turno en segundos.
+    </div>
+    <a href="#" class="app-link">Descargar →</a>
+  </div>
+
+	<!--<div class="app-row upcoming">
+    <div>
+      <div class="app-name">Calculadora de Ramos</div>
+      <span class="app-status">En desarrollo</span>
+    </div>
+    <div class="app-desc">
+      App para calcular el costo real de un ramo de flores — cintas, limpiapipas, papel y demás materiales — pensada para quien vende arreglos florales y necesita cotizar rápido y sin perder margen.
+    </div>
+    <span class="app-link" style="opacity:0.4;">Próximamente</span>
+  </div>-->
+</section>
+
+<footer class="wrap">
+  <span>© <span id="year"></span> StickCode</span>
+  <a href="privacidad.html">Política de Privacidad</a>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

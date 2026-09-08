@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StickCode</title>
+<meta name="description" content="StickCode construye aplicaciones que resuelven problemas cotidianos, empezando por MyNomiApp: nómina y horas extra para trabajadores colombianos.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html" class="nav-logo"><img src="assets/logostickcode.png" alt="StickCode"></a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="apps.html">Apps</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</nav>
+
+<section class="hero" style="background-image: url('assets/hero-photo.jpg');">
+  <div class="hero-content">
+    <div class="hero-eyebrow"><img src="assets/logostickcode.png" alt="StickCode"> — desarrollador independiente</div>
+    <h1>Construyo software<br>que resuelve problemas reales.</h1>
+    <p>Sin relleno, sin funciones que nadie pidió. Cada app nace de un problema concreto que viví o vi de cerca — y se construye hasta que de verdad ayuda.</p>
+    <div class="hero-actions">
+      <a href="apps.html" class="btn filled">Ver proyectos</a>
+      <a href="contacto.html" class="btn outline">Hablemos</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="section-head">
+    <h2>Cómo trabajo</h2>
+    <p>Cada proyecto se construye desde la necesidad real, no desde una lista de funciones de moda.</p>
+  </div>
+
+  <div class="app-row">
+    <div class="app-name">01</div>
+    <div class="app-desc">Identifico un problema específico y cotidiano — el tipo de cosa que la gente resuelve a mano, en una libreta o en su cabeza.</div>
+    <div></div>
+  </div>
+  <div class="app-row">
+    <div class="app-name">02</div>
+    <div class="app-desc">Diseño y construyo la app completa: cálculos, interfaz, persistencia de datos — todo pensado para ese problema, no genérico.</div>
+    <div></div>
+  </div>
+  <div class="app-row">
+    <div class="app-name">03</div>
+    <div class="app-desc">La pulo con quienes la usan de verdad, hasta que deja de sentirse como una herramienta y empieza a sentirse como una solución.</div>
+    <div></div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© <span id="year"></span> StickCode</span>
+  <a href="privacidad.html">Política de Privacidad</a>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('solid', window.scrollY > 40);
+  });
+</script>
+
+</body>
+</html>

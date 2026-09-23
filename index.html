@@ -12,17 +12,24 @@
 <nav class="nav" id="nav">
 	<a href="index.html" class="nav-logo">STICKCODE</a>
 	<div class="nav-links">
-    <a href="index.html">Inicio</a>
+    <a href="index.html" class="active">Inicio</a>
     <a href="apps.html">Apps</a>
     <a href="contacto.html">Contacto</a>
+    <a href="https://www.instagram.com/stickcodeofficial" target="_blank" rel="noopener" class="nav-ig" aria-label="Instagram de StickCode">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+    </a>
+    <span class="nav-counter"><span class="nav-counter-dot">●</span> <span data-site-counter>···</span></span>
   </div>
+	<button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
 </nav>
 
-<section class="hero" style="background-image: url('assets/hero-photo.jpg');">
+<section class="hero" id="hero">
+  <div class="hero-bg hero-bg-a" style="background-image: url('assets/hero-photo.jpg');"></div>
+  <div class="hero-bg hero-bg-b" style="background-image: url('assets/hero-photo1.jpg');"></div>
   <div class="hero-content">
     <div class="hero-eyebrow"><img src="assets/logostickcode.png" alt="StickCode"> — desarrollador independiente</div>
     <h1>Construyo software<br>que resuelve problemas reales.</h1>
-    <p>Sin relleno, sin funciones que nadie pidió. Cada app nace de un problema concreto que viví o vi de cerca — y se construye hasta que de verdad ayuda.</p>
+    <p>Desarrollo aplicaciones enfocadas en resolver un problema real y medible, sin funciones superfluas. Cada proyecto parte de una necesidad concreta, identificada de primera mano o de cerca, y se desarrolla hasta convertirse en una herramienta confiable para quien la usa a diario.</p>
     <div class="hero-actions">
       <a href="apps.html" class="btn filled">Ver proyectos</a>
       <a href="contacto.html" class="btn outline">Hablemos</a>
@@ -38,17 +45,17 @@
 
   <div class="app-row">
     <div class="app-name">01</div>
-    <div class="app-desc">Identifico un problema específico y cotidiano — el tipo de cosa que la gente resuelve a mano, en una libreta o en su cabeza.</div>
+    <div class="app-desc">Análisis del problema: identifico una necesidad específica y recurrente, del tipo que normalmente se resuelve de forma manual o improvisada.</div>
     <div></div>
   </div>
   <div class="app-row">
     <div class="app-name">02</div>
-    <div class="app-desc">Diseño y construyo la app completa: cálculos, interfaz, persistencia de datos — todo pensado para ese problema, no genérico.</div>
+    <div class="app-desc">Diseño y desarrollo: construyo la aplicación de principio a fin — lógica de cálculo, interfaz y persistencia de datos — con un enfoque específico para ese caso de uso, no una solución genérica.</div>
     <div></div>
   </div>
   <div class="app-row">
     <div class="app-name">03</div>
-    <div class="app-desc">La pulo con quienes la usan de verdad, hasta que deja de sentirse como una herramienta y empieza a sentirse como una solución.</div>
+    <div class="app-desc">Refinamiento continuo: itero junto a usuarios reales hasta que el producto deja de ser una herramienta funcional y se convierte en una solución confiable.</div>
     <div></div>
   </div>
 </section>
@@ -65,5 +72,56 @@
   });
 </script>
 
+<script>
+  (function () {
+    var hero = document.getElementById('hero');
+    if (!hero) return;
+    var showingColor = false;
+    setInterval(function () {
+      hero.classList.add('glitch-active');
+      setTimeout(function () {
+        showingColor = !showingColor;
+        hero.classList.toggle('show-color', showingColor);
+        hero.classList.remove('glitch-active');
+      }, 500);
+    }, 9000);
+  })();
+</script>
+
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('[data-site-counter]');
+    if (!els.length) return;
+    fetch('https://countapi.mileshilliard.com/api/v1/hit/stickcode-dev-site-visits')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        var count = data && data.value !== undefined ? parseInt(data.value, 10) : null;
+        els.forEach(function (el) {
+          el.textContent = (typeof count === 'number' && !isNaN(count)) ? count.toLocaleString('es-CO') : '—';
+        });
+      })
+      .catch(function () {
+        els.forEach(function (el) { el.textContent = '—'; });
+      });
+  })();
+</script>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  }
+</script>
 </body>
 </html>

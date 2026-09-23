@@ -13,9 +13,14 @@
 	<a href="index.html" class="nav-logo">STICKCODE</a>
 	<div class="nav-links">
     <a href="index.html">Inicio</a>
-    <a href="apps.html">Apps</a>
+    <a href="apps.html" class="active">Apps</a>
     <a href="contacto.html">Contacto</a>
+    <a href="https://www.instagram.com/stickcodeofficial" target="_blank" rel="noopener" class="nav-ig" aria-label="Instagram de StickCode">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+    </a>
+    <span class="nav-counter"><span class="nav-counter-dot">●</span> <span data-site-counter>···</span></span>
   </div>
+	<button class="nav-toggle" id="navToggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
 </nav>
 
 <header class="page-header wrap">
@@ -33,7 +38,7 @@
     <div class="app-desc">
       Calendario de turnos, cálculo de horas extra y recargos, y liquidación de nómina quincenal o mensual — hecho a la medida de la normativa laboral colombiana. Incluye recordatorios diarios y widgets de pantalla de inicio para registrar el turno en segundos.
     </div>
-    <a href="#" class="app-link">Descargar →</a>
+    <button type="button" class="app-link" onclick="openAppModal('mynomiapp')">Ver más →</button>
   </div>
 
     <div class="app-row">
@@ -45,7 +50,7 @@
     <div class="app-desc">
 		SleepTV es una aplicación utilitaria para Android TV diseñada para optimizar el descanso y el control de tu televisor. Permite configurar un temporizador de apagado automático personalizable para programar el cierre de aplicaciones o la suspensión de la pantalla, evitando que el televisor quede encendido toda la noche. Además, cuenta con funciones de remapeo de botones en el control remoto para facilitar accesos rápidos y personalizar la navegación según tus necesidades.
 	</div>
-    <span class="app-link" style="opacity:0.4;">Próximamente</span>
+    <button type="button" class="app-link" onclick="openAppModal('sleeptv')">Ver más →</button>
   </div>
 	
     <div class="app-row upcoming">
@@ -57,9 +62,99 @@
     <div class="app-desc">
 		Calculadora NaJo Creaciones es una herramienta especializada para artesanos y emprendedores florales que simplifica el cálculo de precios. Te permite registrar el costo de cada insumo (cintas, limpiapipas, bases, empaques) y el tiempo de mano de obra invertido para determinar automáticamente el costo de producción, aplicar el margen de ganancia deseado y establecer precios de venta precisos, competitivos y rentables.
 	</div>
-    <span class="app-link" style="opacity:0.4;">Próximamente | Rediseñando</span>
+    <button type="button" class="app-link" onclick="openAppModal('najo')">Ver más →</button>
   </div>
 </section>
+
+<section class="wrap">
+  <div class="section-head">
+    <h2>Juegos</h2>
+    <p>Además de apps utilitarias, estoy metiéndole mano a mi primer juego.</p>
+  </div>
+
+  <div class="app-row upcoming">
+    <div>
+      <div class="app-name">Arat-Kz</div>
+      <img src="assets/arat-kz.png" alt="Arat-Kz" class="app-logo">
+      <span class="app-status">En desarrollo</span>
+    </div>
+    <div class="app-desc">
+      Arat-Kz es mi primer proyecto como videojuego. Todavía en construcción — pronto voy a compartir más detalles, capturas y el enfoque del gameplay a medida que avance.
+    </div>
+    <button type="button" class="app-link" onclick="openAppModal('arat-kz')">Ver más →</button>
+  </div>
+</section>
+<div class="modal-overlay" id="modal-mynomiapp">
+  <div class="modal-box">
+    <button type="button" class="modal-close" onclick="closeAppModal('mynomiapp')" aria-label="Cerrar">✕</button>
+    <h3>MyNomiApp</h3>
+
+    <h4>Video</h4>
+    <div class="modal-video">
+      <video controls poster="assets/mynomiapp-video-poster.jpg">
+        <source src="assets/mynomiapp-demo.mp4" type="video/mp4">
+        Tu navegador no soporta el video. <a href="assets/mynomiapp-demo.mp4">Descárgalo aquí</a>.
+      </video>
+    </div>
+
+    <p>MyNomiApp nace de un problema muy concreto: llevar el control de turnos, horas extra y recargos de forma manual, en papel o en la cabeza, sin certeza de que el cálculo esté bien hecho según la normativa laboral colombiana.</p>
+    <p>La app te deja registrar cada turno desde el calendario en segundos — con widgets de pantalla de inicio para no tener que abrirla — y calcula automáticamente recargos nocturnos, dominicales, festivos y horas extra, dejando lista la liquidación quincenal o mensual.</p>
+    <p>También incluye recordatorios diarios configurables para que nunca se te pase registrar un turno, y ajustes de contrato flexibles (salario, jornada, frecuencia de pago) que se adaptan a tu situación real.</p>
+
+    <h4>Capturas de pantalla</h4>
+    <div class="modal-gallery">
+      <img src="assets/mynomiapp-screenshot-1.jpg" alt="MyNomiApp - captura 1">
+      <img src="assets/mynomiapp-screenshot-2.jpg" alt="MyNomiApp - captura 2">
+      <img src="assets/mynomiapp-screenshot-3.jpg" alt="MyNomiApp - captura 3">
+      <img src="assets/mynomiapp-screenshot-4.jpg" alt="MyNomiApp - captura 4">
+    </div>
+
+    <div class="modal-actions">
+      <a href="#" class="btn filled">Descargar en Google Play →</a>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de detalle: Sleep TV -->
+<div class="modal-overlay" id="modal-sleeptv">
+  <div class="modal-box">
+    <button type="button" class="modal-close" onclick="closeAppModal('sleeptv')" aria-label="Cerrar">✕</button>
+    <h3>Sleep TV</h3>
+    <p>SleepTV es una aplicación utilitaria para Android TV diseñada para optimizar el descanso y el control de tu televisor.</p>
+    <p>Permite configurar un temporizador de apagado automático personalizable para programar el cierre de aplicaciones o la suspensión de la pantalla, evitando que el televisor quede encendido toda la noche.</p>
+    <p>Además, cuenta con funciones de remapeo de botones en el control remoto para facilitar accesos rápidos y personalizar la navegación según tus necesidades.</p>
+    <div class="modal-actions">
+      <span class="app-status">En desarrollo — próximamente más detalles, capturas y video</span>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de detalle: Calculadora NaJo Creaciones -->
+<div class="modal-overlay" id="modal-najo">
+  <div class="modal-box">
+    <button type="button" class="modal-close" onclick="closeAppModal('najo')" aria-label="Cerrar">✕</button>
+    <h3>Calculadora NaJo Creaciones</h3>
+    <p>Calculadora NaJo Creaciones es una herramienta especializada para artesanos y emprendedores florales que simplifica el cálculo de precios.</p>
+    <p>Te permite registrar el costo de cada insumo (cintas, limpiapipas, bases, empaques) y el tiempo de mano de obra invertido para determinar automáticamente el costo de producción.</p>
+    <p>También aplica el margen de ganancia deseado y establece precios de venta precisos, competitivos y rentables.</p>
+    <div class="modal-actions">
+      <span class="app-status">Descontinuado — en proceso de rediseño</span>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de detalle: Arat-Kz -->
+<div class="modal-overlay" id="modal-arat-kz">
+  <div class="modal-box">
+    <button type="button" class="modal-close" onclick="closeAppModal('arat-kz')" aria-label="Cerrar">✕</button>
+    <h3>Arat-Kz</h3>
+    <p>Arat-Kz es mi primer proyecto como videojuego, todavía en construcción.</p>
+    <p>Pronto voy a compartir más detalles, capturas y el enfoque del gameplay a medida que avance el desarrollo.</p>
+    <div class="modal-actions">
+      <span class="app-status">En desarrollo</span>
+    </div>
+  </div>
+</div>
 
 <footer class="wrap">
   <span>© <span id="year"></span> StickCode</span>
@@ -70,5 +165,72 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
+<script>
+  function openAppModal(id) {
+    const modal = document.getElementById('modal-' + id);
+    if (!modal) return;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeAppModal(id) {
+    const modal = document.getElementById('modal-' + id);
+    if (!modal) return;
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    const video = modal.querySelector('video');
+    if (video) video.pause();
+  }
+
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeAppModal(overlay.id.replace('modal-', ''));
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal-overlay.open').forEach(overlay => {
+        closeAppModal(overlay.id.replace('modal-', ''));
+      });
+    }
+  });
+</script>
+
+
+<script>
+  (function () {
+    var els = document.querySelectorAll('[data-site-counter]');
+    if (!els.length) return;
+    fetch('https://countapi.mileshilliard.com/api/v1/hit/stickcode-dev-site-visits')
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        var count = data && data.value !== undefined ? parseInt(data.value, 10) : null;
+        els.forEach(function (el) {
+          el.textContent = (typeof count === 'number' && !isNaN(count)) ? count.toLocaleString('es-CO') : '—';
+        });
+      })
+      .catch(function () {
+        els.forEach(function (el) { el.textContent = '—'; });
+      });
+  })();
+</script>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  }
+</script>
 </body>
 </html>

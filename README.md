@@ -28,6 +28,12 @@ setTimeout(function () { ... }, 500);      // duración del glitch antes de most
 
 Para que el cambio sea más o menos frecuente, ajusta el `9000` (9 segundos). Para que el glitch dure más o menos, ajusta el `500` — y el mismo número en `style.css` dentro de `.hero.glitch-active .hero-bg { animation: heroGlitch 0.5s steps(8, end); }` (deben coincidir).
 
+## Galería y video dentro del modal (Ver más)
+
+**Galería en carrusel:** las capturas del modal de una app ahora se muestran de a 2, con flechas (‹ ›) para pasar de par en par. Para agregar o quitar capturas, edita las `<img>` dentro de `.modal-gallery` en el `apps.html` — no hay que tocar nada más, el carrusel se ajusta solo. El mismo bloque (`gallery-carousel` + `modal-gallery` + botones `gallery-prev`/`gallery-next`) lo puedes copiar a cualquier otro modal que quieras que tenga galería.
+
+**Video vertical:** el reproductor ya no fuerza el video a 16:9 — se adapta a la proporción real del archivo (vertical, horizontal, cuadrado, lo que sea), con un alto máximo de 65% de la pantalla (`.modal-video` / `.modal-video video` en `style.css`, la propiedad `max-height: 65vh`). Si algún día usas un video horizontal, se va a ver igual de bien, sin necesidad de cambiar nada.
+
 En escritorio (900px de ancho o más), la foto ya no ocupa todo el ancho de la pantalla — vive en un panel a la derecha (el resto queda oscuro), para que no se vea con tanto zoom/recortada. Puedes ajustar qué tan ancho es ese panel y qué parte de la foto se ve en `style.css`:
 ```css
 @media (min-width: 900px) {

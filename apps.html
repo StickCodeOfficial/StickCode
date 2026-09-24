@@ -102,11 +102,18 @@
     <p>También incluye recordatorios diarios configurables para que nunca se te pase registrar un turno, y ajustes de contrato flexibles (salario, jornada, frecuencia de pago) que se adaptan a tu situación real.</p>
 
     <h4>Capturas de pantalla</h4>
-    <div class="modal-gallery">
-      <img src="assets/mynomiapp-screenshot-1.jpg" alt="MyNomiApp - captura 1">
-      <img src="assets/mynomiapp-screenshot-2.jpg" alt="MyNomiApp - captura 2">
-      <img src="assets/mynomiapp-screenshot-3.jpg" alt="MyNomiApp - captura 3">
-      <img src="assets/mynomiapp-screenshot-4.jpg" alt="MyNomiApp - captura 4">
+    <div class="gallery-carousel">
+      <button type="button" class="gallery-arrow gallery-prev" onclick="scrollGallery(this, -1)" aria-label="Capturas anteriores">‹</button>
+      <div class="modal-gallery">
+        <img src="assets/mynomiapp-screenshot.png" alt="MyNomiApp - captura 0">
+        <img src="assets/mynomiapp-screenshot-1.png" alt="MyNomiApp - captura 1">
+        <img src="assets/mynomiapp-screenshot-2.png" alt="MyNomiApp - captura 2">
+        <img src="assets/mynomiapp-screenshot-3.png" alt="MyNomiApp - captura 3">
+        <img src="assets/mynomiapp-screenshot-4.png" alt="MyNomiApp - captura 4">
+        <img src="assets/mynomiapp-screenshot-5.png" alt="MyNomiApp - captura 5">
+        <img src="assets/mynomiapp-screenshot-6.png" alt="MyNomiApp - captura 6">
+      </div>
+      <button type="button" class="gallery-arrow gallery-next" onclick="scrollGallery(this, 1)" aria-label="Siguientes capturas">›</button>
     </div>
 
     <div class="modal-actions">
@@ -137,6 +144,20 @@
     <p>Calculadora NaJo Creaciones es una herramienta especializada para artesanos y emprendedores florales que simplifica el cálculo de precios.</p>
     <p>Te permite registrar el costo de cada insumo (cintas, limpiapipas, bases, empaques) y el tiempo de mano de obra invertido para determinar automáticamente el costo de producción.</p>
     <p>También aplica el margen de ganancia deseado y establece precios de venta precisos, competitivos y rentables.</p>
+	  <h4>Capturas de pantalla</h4>
+<div class="gallery-carousel">
+  <button type="button" class="gallery-arrow gallery-prev" onclick="scrollGallery(this, -1)" aria-label="Capturas anteriores">‹</button>
+  <div class="modal-gallery">
+    <img src="assets/najo-screenshot-1.png" alt="Calculadora NaJo - captura 1">
+    <img src="assets/najo-screenshot-2.png" alt="Calculadora NaJo - captura 2">
+    <img src="assets/najo-screenshot-3.png" alt="Calculadora NaJo - captura 3">
+    <img src="assets/najo-screenshot-4.png" alt="Calculadora NaJo - captura 4">
+    <img src="assets/najo-screenshot-5.png" alt="Calculadora NaJo - captura 5">
+    <img src="assets/najo-screenshot-6.png" alt="Calculadora NaJo - captura 6">
+    <img src="assets/najo-screenshot-7.png" alt="Calculadora NaJo - captura 7">
+  </div>
+  <button type="button" class="gallery-arrow gallery-next" onclick="scrollGallery(this, 1)" aria-label="Siguientes capturas">›</button>
+</div>
     <div class="modal-actions">
       <span class="app-status">Descontinuado — en proceso de rediseño</span>
     </div>
@@ -195,6 +216,13 @@
       });
     }
   });
+
+  function scrollGallery(btn, dir) {
+    const carousel = btn.closest('.gallery-carousel');
+    const track = carousel && carousel.querySelector('.modal-gallery');
+    if (!track) return;
+    track.scrollBy({ left: track.clientWidth * dir, behavior: 'smooth' });
+  }
 </script>
 
 

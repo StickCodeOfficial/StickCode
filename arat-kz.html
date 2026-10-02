@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Arat-Kz | StickCode</title>
+		<meta name="description" content="Arat-Kz — videojuego de supervivencia y construcción ambientado en la mitología azteca. En desarrollo.">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body class="game-page">
+
+		<nav class="nav solid">
+			<a href="index.html" class="nav-logo">STICKCODE</a>
+			<div class="nav-links">
+				<a href="index.html">Inicio</a>
+				<a href="tienda.html">Tienda</a>
+				<a href="contacto.html">Contacto</a>
+				<a href="https://www.instagram.com/stickcode_" target="_blank" rel="noopener" class="nav-ig" aria-label="Instagram de StickCode">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+						<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+						<line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+					</svg>
+				</a>
+				<span class="nav-counter">
+					<span class="nav-counter-dot">●</span>
+					<span data-site-counter="">···</span>
+				</span>
+			</div>
+			<button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</nav>
+
+		<!-- HERO -->
+		<header class="game-hero" style="background-image: url('assets/aratkz-hero.jpg');">
+			<div class="game-back wrap">
+				<a href="tienda.html#juegos">← Volver a la Tienda</a>
+			</div>
+			<div class="game-hero-content wrap">
+				<span class="game-eyebrow">En desarrollo</span>
+				<img src="assets/aratkzlogoamarillo.png" alt="Arat-Kz" class="game-title-logo">
+				<p class="game-hook">Siglos después de la guerra que borró a tu civilización del mapa, despiertas sin memoria en una selva que devoró lo que quedó de tu mundo. Sobrevive. Reconstruye. Enfréntate a los dioses que lo destruyeron.</p>
+				<div class="game-tags">
+					<span class="game-tag">Supervivencia</span>
+					<span class="game-tag">Construcción</span>
+					<span class="game-tag">Mitología azteca</span>
+					<span class="game-tag">Jefes de mundo</span>
+				</div>
+				<div class="game-hero-actions">
+					<a href="https://www.instagram.com/stickcode_" target="_blank" rel="noopener" class="btn gold">Seguir el desarrollo →</a>
+					<a href="tienda.html#juegos" class="btn outline">Volver a la Tienda</a>
+				</div>
+			</div>
+		</header>
+
+		<aside class="side-nav" id="gameSideNav">
+			<a href="#lore" class="side-nav-item active" data-section="lore">
+				<span class="side-nav-icon">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+						<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+					</svg>
+				</span>
+				<span class="side-nav-label">Historia</span>
+			</a>
+			<a href="#mecanicas" class="side-nav-item" data-section="mecanicas">
+				<span class="side-nav-icon">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M12 2L4 7v10l8 5 8-5V7l-8-5z"></path>
+						<path d="M12 22V12"></path>
+						<path d="M4 7l8 5 8-5"></path>
+					</svg>
+				</span>
+				<span class="side-nav-label">Mecánicas</span>
+			</a>
+			<a href="#hud" class="side-nav-item" data-section="hud">
+				<span class="side-nav-icon">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21l7.78-7.55 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+					</svg>
+				</span>
+				<span class="side-nav-label">Interfaz</span>
+			</a>
+			<a href="#panteon" class="side-nav-item" data-section="panteon">
+				<span class="side-nav-icon">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M12 2l2.4 6.5L21 10l-5 4.5L17.5 21 12 17.5 6.5 21 8 14.5 3 10l6.6-1.5z"></path>
+					</svg>
+				</span>
+				<span class="side-nav-label">Panteón</span>
+			</a>
+			<a href="#trailer" class="side-nav-item" data-section="trailer">
+				<span class="side-nav-icon">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<circle cx="12" cy="12" r="9"></circle>
+						<path d="M10 8l6 4-6 4V8z"></path>
+					</svg>
+				</span>
+				<span class="side-nav-label">Avance</span>
+			</a>
+			<a href="#galeria" class="side-nav-item" data-section="galeria">
+				<span class="side-nav-icon">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<rect x="3" y="3" width="18" height="18" rx="2"></rect>
+						<circle cx="8.5" cy="8.5" r="1.5"></circle>
+						<path d="M21 15l-5-5L5 21"></path>
+					</svg>
+				</span>
+				<span class="side-nav-label">Galería</span>
+			</a>
+		</aside>
+
+		<!-- LORE -->
+		<section class="game-section lore-bg wrap" id="lore" style="background-image: url('assets/aratkz-cataclismo.jpg');">
+			<div class="section-head">
+				<h2>La historia</h2>
+				<p>Tres actos que explican por qué estás solo, por qué no recuerdas nada, y qué tienes que hacer al respecto.</p>
+			</div>
+			<div class="lore-list">
+				<div class="lore-act">
+					<span class="lore-act-label">Acto I</span>
+					<h3>El Cataclismo de los Dioses</h3>
+					<p>Una guerra divina entre Tezcatlipoca y Quetzalcóatl desató fuerzas que ninguna civilización podía resistir. La guerra entre ambos dioses destruyó por completo a la civilización azteca, dejando solo ruinas, selva y silencio donde antes hubo templos e imperios.</p>
+				</div>
+				<div class="lore-act">
+					<span class="lore-act-label">Acto II</span>
+					<h3>El Despertar del Sobreviviente</h3>
+					<p>El último guerrero azteca despierta siglos después, solo en medio de la selva, sin memoria de lo ocurrido. No sabe cuánto tiempo pasó ni por qué sigue con vida — solo sabe que el mundo que conocía ya no existe, ni quién es él ahora.</p>
+				</div>
+				<div class="lore-act">
+					<span class="lore-act-label">Acto III</span>
+					<h3>Tu Misión</h3>
+					<p>Sobrevivir. Reunir recursos y construir un refugio. Forjar herramientas con lo que ofrece la selva. Invocar a los Tótems Sagrados para que te acompañen. Y, finalmente, enfrentar a las entidades divinas corrompidas que aún vagan por este mundo roto.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- MECÁNICAS -->
+		<section class="game-section wrap" id="mecanicas">
+			<div class="section-head">
+				<h2>Cómo se juega</h2>
+				<p>Las piezas que sostienen tu supervivencia.</p>
+			</div>
+			<div class="mechanic-grid">
+				<div class="mechanic-card">
+					<div class="mechanic-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M12 2L4 7v10l8 5 8-5V7l-8-5z"></path>
+							<path d="M12 22V12"></path>
+							<path d="M4 7l8 5 8-5"></path>
+						</svg>
+					</div>
+					<h3>Supervivencia y recolección</h3>
+					<p>La selva es tu única despensa. Cada herramienta y cada muro empieza con lo que cortas, extraes o recoges con tus manos.</p>
+					<ul>
+						<li>Tala árboles para conseguir madera</li>
+						<li>Extrae piedra y jade de las rocas</li>
+						<li>Recolecta plantas y fibras silvestres</li>
+					</ul>
+				</div>
+				<div class="mechanic-card">
+					<div class="mechanic-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<rect x="3" y="10" width="18" height="11" rx="1"></rect>
+							<path d="M3 10l9-7 9 7"></path>
+							<path d="M9 21v-6h6v6"></path>
+						</svg>
+					</div>
+					<h3>Construcción de base</h3>
+					<p>Un refugio es lo único que te separa de la selva. Se levanta con madera, bambú y piedra tallada a mano.</p>
+					<ul>
+						<li>Estructuras de madera y bambú</li>
+						<li>Piedra tallada para defensas duraderas</li>
+						<li>Ampliable a medida que avanzas</li>
+					</ul>
+				</div>
+				<div class="mechanic-card">
+					<div class="mechanic-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<circle cx="12" cy="12" r="9"></circle>
+							<path d="M12 7v5l3 3"></path>
+						</svg>
+					</div>
+					<h3>Jefes del mundo</h3>
+					<p>Entidades divinas corrompidas rondan el territorio. Derrotarlas no solo te deja con vida — desbloquea recetas y totems avanzados.</p>
+					<ul>
+						<li>Encuentros al estilo Terraria</li>
+						<li>Recompensas que abren nueva progresión</li>
+						<li>Ligados a los rangos del panteón</li>
+					</ul>
+				</div>
+				<div class="mechanic-card">
+					<div class="mechanic-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M12 2l2.4 6.5L21 10l-5 4.5L17.5 21 12 17.5 6.5 21 8 14.5 3 10l6.6-1.5z"></path>
+						</svg>
+					</div>
+					<h3>Compañeros Tótem</h3>
+					<p>Invoca animales sagrados que luchan y exploran junto a ti. Cada uno otorga una ventaja distinta en el camino.</p>
+					<ul>
+						<li>Tótem del Quetzal — revela el mapa y detecta recursos</li>
+						<li>Tótem del Jaguar (Balam) — pelea a tu lado y aumenta tu ataque</li>
+						<li>Próximamente: Serpiente de Agua, Águila Real, Xoloitzcuintle</li>
+					</ul>
+				</div>
+				<div class="mechanic-card">
+					<div class="mechanic-icon">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M4 21V9l4-3v15"></path>
+							<path d="M8 6l4-3 4 3"></path>
+							<path d="M12 3v18"></path>
+							<path d="M16 6v15l4-3V9z"></path>
+							<path d="M9 13h2"></path>
+							<path d="M13 16h2"></path>
+						</svg>
+					</div>
+					<h3>Exploración de ruinas</h3>
+					<p>Más de doce templos y ruinas antiguas esperan, cada uno con sus propios cofres, trampas y acertijos de piedra.</p>
+					<ul>
+						<li>12+ ruinas y templos por explorar</li>
+						<li>Cofres con equipo y recursos raros</li>
+						<li>Trampas y acertijos ambientales</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<!-- HUD -->
+		<section class="game-section wrap" id="hud">
+			<div class="section-head">
+				<h2>La interfaz</h2>
+				<p>Cada elemento del HUD está tallado en la misma iconografía que este mundo roto.</p>
+			</div>
+			<div class="hud-mockup">
+				<div class="hud-cluster">
+					<div class="hud-cluster-row">
+						<img class="hud-icon-img" src="assets/hud/CorazonLleno.jpg" alt="">
+						<img class="hud-icon-img" src="assets/hud/CorazonLleno.jpg" alt="">
+						<img class="hud-icon-img" src="assets/hud/CorazonVacio.jpg" alt="">
+					</div>
+					<span class="hud-cluster-label">Salud</span>
+					<span class="hud-cluster-desc">Corazones de piedra azteca grabados con jeroglíficos.</span>
+				</div>
+				<div class="hud-cluster">
+					<div class="hud-cluster-row">
+						<img class="hud-icon-img" src="assets/hud/ComidaLlena.jpg" alt="">
+						<img class="hud-icon-img" src="assets/hud/ComidaLlena.jpg" alt="">
+						<img class="hud-icon-img" src="assets/hud/ComidaVacio.jpg" alt="">
+					</div>
+					<span class="hud-cluster-label">Hambre</span>
+					<span class="hud-cluster-desc">Mazorcas de maíz dorado que marcan cuánto te queda por comer.</span>
+				</div>
+				<div class="hud-cluster">
+					<div class="hud-cluster-row">
+						<img class="hud-icon-img" src="assets/hud/AguaLlena.png" alt="">
+						<img class="hud-icon-img" src="assets/hud/AguaLlena.png" alt="">
+						<img class="hud-icon-img" src="assets/hud/AguaVacio.png" alt="">
+					</div>
+					<span class="hud-cluster-label">Sed</span>
+					<span class="hud-cluster-desc">Vasijas de agua sagrada — sin ellas, la selva te cobra factura rápido.</span>
+				</div>
+				<div class="hud-cluster">
+					<div class="hud-bar"><span class="hud-bar-fill" style="width: 72%;"></span></div>
+					<span class="hud-cluster-label">Energía</span>
+					<span class="hud-cluster-desc">Barra de energía mística para correr, esquivar y dar golpes pesados.</span>
+				</div>
+				<div class="hud-cluster">
+					<div class="hud-slots">
+						<span class="hud-slot"></span>
+						<span class="hud-slot"></span>
+						<span class="hud-slot"></span>
+						<span class="hud-slot"></span>
+					</div>
+					<span class="hud-cluster-label">Inventario</span>
+					<span class="hud-cluster-desc">Casillas enmarcadas en madera con detalles de piedra tallada.</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- PANTEÓN -->
+		<section class="game-section wrap" id="panteon">
+			<div class="section-head">
+				<h2>El panteón</h2>
+				<p>Las fuerzas que moldearon el Cataclismo — y las que todavía caminan sobre lo que queda del mundo.</p>
+			</div>
+
+			<div class="pantheon-tier rank-1">
+				<div class="pantheon-bar"></div>
+				<div class="pantheon-body">
+					<span class="pantheon-tier-name">Rango Divino Superior</span>
+					<p class="pantheon-tier-desc">Los Dueños de la Existencia.</p>
+					<div class="deity-rows">
+						<div class="deity-row">
+							<div class="deity-photo"><img src="assets/dioses/Ometeotl.jpg" alt="Ometéotl"></div>
+							<div class="deity-copy">
+								<div class="deity-name">Ometéotl</div>
+								<div class="deity-epithet">El Dios Dual</div>
+								<p class="deity-desc">Origen de todo lo existente. No es realmente un "jefe" sino la fuerza mística que permite que el mundo exista.</p>
+							</div>
+						</div>
+						<div class="deity-row reverse">
+							<div class="deity-photo"><img src="assets/dioses/Tezcatlipoca.jpg" alt="Tezcatlipoca"></div>
+							<div class="deity-copy">
+								<div class="deity-name">Tezcatlipoca</div>
+								<div class="deity-epithet">El Espejo Humeante</div>
+								<p class="deity-desc">El más poderoso. Dios de la providencia, la invisibilidad y la oscuridad, capaz de alterar el destino. Rival eterno de Quetzalcóatl.</p>
+							</div>
+						</div>
+						<div class="deity-row">
+							<div class="deity-photo"><img src="assets/dioses/Quetzalcoatl.jpg" alt="Quetzalcóatl"></div>
+							<div class="deity-copy">
+								<div class="deity-name">Quetzalcóatl</div>
+								<div class="deity-epithet">La Serpiente Emplumada</div>
+								<p class="deity-desc">Dios del conocimiento, la luz y el viento, creador de la humanidad actual. El Tótem del Quetzal es un símbolo directo de su poder.</p>
+							</div>
+						</div>
+						<div class="deity-row reverse">
+							<div class="deity-photo"><img src="assets/dioses/Huitzilopochtli.jpg" alt="Huitzilopochtli"></div>
+							<div class="deity-copy">
+								<div class="deity-name">Huitzilopochtli</div>
+								<div class="deity-epithet">El Colibrí Zurdo</div>
+								<p class="deity-desc">Dios de la guerra y el sol. Fuerza bruta y voluntad — guió a los aztecas a fundar su imperio.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="pantheon-tier rank-2">
+				<div class="pantheon-bar"></div>
+				<div class="pantheon-body">
+					<span class="pantheon-tier-name">Rango Elemental</span>
+					<p class="pantheon-tier-desc">Señores de la Naturaleza — jefes de bioma.</p>
+					<div class="deity-rows">
+						<div class="deity-row">
+							<div class="deity-photo"><img src="assets/dioses/Tlaloc.jpg" alt="Tláloc"></div>
+							<div class="deity-copy">
+								<div class="deity-name">Tláloc</div>
+								<div class="deity-epithet">Señor de la Lluvia</div>
+								<p class="deity-desc">Da la vida o causa la hambruna. Controla los rayos y las inundaciones.</p>
+							</div>
+						</div>
+						<div class="deity-row reverse">
+							<div class="deity-photo"><img src="assets/dioses/XipeTotec.jpg" alt="Xipe Tótec"></div>
+							<div class="deity-copy">
+								<div class="deity-name">Xipe Tótec</div>
+								<div class="deity-epithet">Nuestro Señor Desollado</div>
+								<p class="deity-desc">Dios de la agricultura y la regeneración. Representa el ciclo de vida y muerte — temido porque algo debe morir para que surja la vida.</p>
+							</div>
+						</div>
+						<div class="deity-row">
+							<div class="deity-photo"><img src="assets/dioses/Chalchiuhtlicue.jpg" alt="Chalchiuhtlicue"></div>
+							<div class="deity-copy">
+								<div class="deity-name">Chalchiuhtlicue</div>
+								<div class="deity-epithet">La de la Falda de Jade</div>
+								<p class="deity-desc">Diosa de los lagos y ríos. Fuerza del agua que fluye — y que también destruye.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="pantheon-tier rank-3">
+				<div class="pantheon-bar"></div>
+				<div class="pantheon-body">
+					<span class="pantheon-tier-name">Rango del Inframundo</span>
+					<p class="pantheon-tier-desc">Señores de la Muerte — un poder pasivo pero inevitable.</p>
+					<div class="deity-rows">
+						<div class="deity-row reverse">
+							<div class="deity-photo"><img src="assets/dioses/Mictlantecuhtli.jpg" alt="Mictlantecuhtli"></div>
+							<div class="deity-copy">
+								<div class="deity-name">Mictlantecuhtli</div>
+								<div class="deity-epithet">Señor del Mictlán</div>
+								<p class="deity-desc">Rey del inframundo, esqueleto adornado con ojos de estrella. Poder del silencio y el descanso eterno — jefe de zona en las cuevas más profundas.</p>
+							</div>
+						</div>
+						<div class="deity-row">
+							<div class="deity-photo"><img src="assets/dioses/Mictecacíhuatl.jpg" alt="Mictecacíhuatl"></div>
+							<div class="deity-copy">
+								<div class="deity-name">Mictecacíhuatl</div>
+								<div class="deity-epithet">La Dama de la Muerte</div>
+								<p class="deity-desc">Su esposa. Vela por los huesos de los muertos.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="pantheon-tier rank-4">
+				<div class="pantheon-bar"></div>
+				<div class="pantheon-body">
+					<span class="pantheon-tier-name">Rango Terrenal y de Oficios</span>
+					<p class="pantheon-tier-desc">Guardianes Menores — mini-jefes intermedios que custodian recursos específicos.</p>
+					<div class="deity-rows">
+						<div class="deity-row reverse">
+							<div class="deity-photo"><img src="assets/dioses/Coyolxauhqui.jpg" alt="Coyolxauhqui"></div>
+							<div class="deity-copy">
+								<div class="deity-name">Coyolxauhqui</div>
+								<div class="deity-epithet">La Diosa de la Luna</div>
+								<p class="deity-desc">Hermana de Huitzilopochtli. Fuerza de la noche estrellada.</p>
+							</div>
+						</div>
+						<div class="deity-row">
+							<div class="deity-photo"><img src="assets/dioses/Huehueteotl.jpg" alt="Huehuetéotl"></div>
+							<div class="deity-copy">
+								<div class="deity-name">Huehuetéotl</div>
+								<div class="deity-epithet">El Dios Viejo del Fuego</div>
+								<p class="deity-desc">Poder del volcán y el calor del hogar. Lento pero destructivo.</p>
+							</div>
+						</div>
+						<div class="deity-row reverse">
+							<div class="deity-photo"><img src="assets/dioses/Centeotl.jpg" alt="Centéotl"></div>
+							<div class="deity-copy">
+								<div class="deity-name">Centéotl</div>
+								<div class="deity-epithet">Dios del Maíz</div>
+								<p class="deity-desc">Fuerza de la tierra cultivada.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- TRAILER -->
+		<section class="game-section wrap" id="trailer">
+			<div class="section-head">
+				<h2>Avance</h2>
+				<p>Un primer vistazo al mundo de Arat-Kz.</p>
+			</div>
+			<div class="game-video">
+				<video controls poster="assets/aratkz-trailer-poster.jpg">
+					<source src="assets/aratkz-trailer.mp4" type="video/mp4">
+					Tu navegador no soporta el video. <a href="assets/aratkz-trailer.mp4">Descárgalo aquí</a>.
+				</video>
+			</div>
+		</section>
+
+		<!-- GALERÍA / PROTOTIPOS -->
+		<section class="game-section wrap" id="galeria">
+			<div class="section-head">
+				<h2>Arte conceptual y prototipos</h2>
+				<p>Referencias visuales y capturas del desarrollo en curso.</p>
+			</div>
+			<div class="gallery-carousel">
+				<button type="button" class="gallery-arrow gallery-prev" onclick="scrollGallery(this, -1)" aria-label="Imágenes anteriores">‹</button>
+				<div class="modal-gallery">
+					<img src="assets/aratkz-concept-1.jpg" alt="Arat-Kz - arte conceptual 1">
+					<img src="assets/aratkz-concept-2.jpg" alt="Arat-Kz - arte conceptual 2">
+					<img src="assets/aratkz-concept-3.jpg" alt="Arat-Kz - arte conceptual 3">
+					<img src="assets/aratkz-concept-4.jpg" alt="Arat-Kz - arte conceptual 4">
+					<img src="assets/aratkz-concept-5.jpg" alt="Arat-Kz - arte conceptual 5">
+				</div>
+				<button type="button" class="gallery-arrow gallery-next" onclick="scrollGallery(this, 1)" aria-label="Siguientes imágenes">›</button>
+			</div>
+		</section>
+
+		<!-- CTA FINAL -->
+		<section class="game-cta wrap">
+			<h2>El último guerrero está despertando.</h2>
+			<p>Sigue el desarrollo de Arat-Kz y entérate primero de cada avance, totem nuevo y jefe revelado.</p>
+			<a href="https://www.instagram.com/stickcode_" target="_blank" rel="noopener" class="btn gold">Seguir en Instagram →</a>
+		</section>
+
+		<!-- Lightbox para zoom de capturas -->
+		<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+			<button type="button" class="lightbox-close" onclick="closeLightbox(event)" aria-label="Cerrar">✕</button>
+			<img src="" alt="" id="lightbox-img">
+		</div>
+
+		<footer class="wrap">
+			<span>
+				© <span id="year"></span> StickCode
+			</span>
+			<a href="privacidad.html">Política de Privacidad</a>
+		</footer>
+
+		<script>
+			document.getElementById('year').textContent = new Date().getFullYear();
+		</script>
+
+		<script>
+			// ----- Glitch periódico en los retratos del panteón (mismo efecto que el hero de Inicio) -----
+			document.querySelectorAll('.deity-photo').forEach((el, i) => {
+				let isColor = false;
+				setInterval(() => {
+					if (el.matches(':hover')) return;
+					el.classList.add('glitch-active');
+					setTimeout(() => el.classList.remove('glitch-active'), 500);
+					isColor = !isColor;
+					el.classList.toggle('is-color', isColor);
+				}, 6500 + i * 850);
+			});
+		</script>
+
+		<script>
+			// ----- Carrusel: desplazamiento manual -----
+			function scrollGallery(btn, dir) {
+				const carousel = btn.closest('.gallery-carousel');
+				const track = carousel.querySelector('.modal-gallery');
+				if (!track) return;
+				const amount = track.clientWidth * 0.8 * dir;
+				track.scrollBy({ left: amount, behavior: 'smooth' });
+				restartCarouselAutoplay(carousel);
+			}
+
+			function updateBodyScroll() {
+				const lb = document.getElementById('lightbox');
+				const modalOpen = document.querySelector('.modal-overlay.open');
+				const lbOpen = lb && lb.classList.contains('open');
+				document.body.style.overflow = (modalOpen || lbOpen) ? 'hidden' : '';
+			}
+
+			// ----- Carrusel: reproducción automática -----
+			const carouselTimers = new WeakMap();
+
+			function advanceCarousel(track) {
+				const atEnd = Math.ceil(track.scrollLeft + track.clientWidth) >= track.scrollWidth;
+				if (atEnd) {
+					track.scrollTo({ left: 0, behavior: 'smooth' });
+				} else {
+					track.scrollBy({ left: track.clientWidth * 0.8, behavior: 'smooth' });
+				}
+			}
+
+			function startCarouselAutoplay(carousel) {
+				const track = carousel.querySelector('.modal-gallery');
+				if (!track || carouselTimers.has(carousel) || carousel.dataset.paused === 'true') return;
+				const timer = setInterval(() => advanceCarousel(track), 3500);
+				carouselTimers.set(carousel, timer);
+			}
+
+			function stopCarouselAutoplay(carousel) {
+				const timer = carouselTimers.get(carousel);
+				if (timer) clearInterval(timer);
+				carouselTimers.delete(carousel);
+			}
+
+			function restartCarouselAutoplay(carousel) {
+				stopCarouselAutoplay(carousel);
+				startCarouselAutoplay(carousel);
+			}
+
+			// Pausa al pasar el mouse, retoma al salir — se registra una sola vez por carrusel
+			document.querySelectorAll('.gallery-carousel').forEach(carousel => {
+				carousel.addEventListener('mouseenter', () => {
+					carousel.dataset.paused = 'true';
+					stopCarouselAutoplay(carousel);
+				});
+				carousel.addEventListener('mouseleave', () => {
+					carousel.dataset.paused = 'false';
+					startCarouselAutoplay(carousel);
+				});
+				if (!carousel.closest('.modal-overlay')) startCarouselAutoplay(carousel);
+			});
+
+			// ----- Zoom de capturas (lightbox) -----
+			document.addEventListener('click', (e) => {
+				const img = e.target.closest('.modal-gallery img');
+				if (!img) return;
+				openLightbox(img.src, img.alt);
+			});
+
+			function openLightbox(src, alt) {
+				const lb = document.getElementById('lightbox');
+				const img = document.getElementById('lightbox-img');
+				if (!lb || !img) return;
+				img.src = src;
+				img.alt = alt || '';
+				lb.classList.add('open');
+				updateBodyScroll();
+			}
+
+			function closeLightbox(e) {
+				if (e) e.stopPropagation();
+				const lb = document.getElementById('lightbox');
+				if (!lb || !lb.classList.contains('open')) return;
+				lb.classList.remove('open');
+				updateBodyScroll();
+			}
+		</script>
+
+		<script>
+			// Resalta el ítem activo del panel lateral según la sección visible
+			(function () {
+				const sections = ['lore', 'mecanicas', 'hud', 'panteon', 'trailer', 'galeria']
+					.map(id => document.getElementById(id))
+					.filter(Boolean);
+				const navItems = document.querySelectorAll('#gameSideNav .side-nav-item');
+				if (!sections.length || !navItems.length) return;
+
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							navItems.forEach(item => {
+								item.classList.toggle('active', item.dataset.section === entry.target.id);
+							});
+						}
+					});
+				}, { rootMargin: '-40% 0px -50% 0px' });
+
+				sections.forEach(s => observer.observe(s));
+			})();
+		</script>
+
+		<script>
+			(function () {
+				var els = document.querySelectorAll('[data-site-counter]');
+				if (!els.length) return;
+				fetch('https://countapi.mileshilliard.com/api/v1/hit/stickcode-dev-site-visits')
+					.then(function (res) { return res.json(); })
+					.then(function (data) {
+						var count = data && data.value !== undefined ? parseInt(data.value, 10) : null;
+						els.forEach(function (el) {
+							el.textContent = (typeof count === 'number' && !isNaN(count)) ? count.toLocaleString('es-CO') : '—';
+						});
+					})
+					.catch(function () {
+						els.forEach(function (el) { el.textContent = '—'; });
+					});
+			})();
+		</script>
+
+		<script>
+			const navToggle = document.getElementById('navToggle');
+			const navLinks = document.querySelector('.nav-links');
+			if (navToggle && navLinks) {
+				navToggle.addEventListener('click', () => {
+					navToggle.classList.toggle('open');
+					navLinks.classList.toggle('open');
+				});
+				navLinks.querySelectorAll('a').forEach(a => {
+					a.addEventListener('click', () => {
+						navToggle.classList.remove('open');
+						navLinks.classList.remove('open');
+					});
+				});
+			}
+		</script>
+	</body>
+</html>

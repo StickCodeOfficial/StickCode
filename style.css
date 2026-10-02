@@ -256,15 +256,12 @@ a {
   display: block;
 }
 
-.app-logo {
-  height: 192px;
-  width: auto;
-  display: block;
-}
-
+.app-logo,
 .privacy-app h2 img {
+  width: 192px;
   height: 192px;
-  width: auto;
+  object-fit: contain;
+  object-position: left center;
   display: block;
 }
 
@@ -572,6 +569,7 @@ img {
 
   .app-logo,
   .privacy-app h2 img {
+    width: 120px;
     height: 120px;
   }
 }
@@ -607,6 +605,7 @@ img {
   }
   .app-logo,
   .privacy-app h2 img {
+    width: 90px;
     height: 90px;
   }
   .hero-eyebrow img {
@@ -615,8 +614,12 @@ img {
   .modal-box {
     padding: 24px 18px;
   }
+  .modal-gallery {
+    height: 220px;
+  }
   .modal-gallery img {
-    height: 200px;
+    height: 220px;
+    max-width: 78%;
   }
   .gallery-arrow {
     width: 30px;
@@ -635,6 +638,7 @@ img {
   }
   .app-logo,
   .privacy-app h2 img {
+    width: 72px;
     height: 72px;
   }
 }
@@ -741,7 +745,9 @@ img {
 .modal-gallery {
   flex: 1;
   display: flex;
+  align-items: center;
   gap: 12px;
+  height: 340px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -753,15 +759,20 @@ img {
 }
 
 .modal-gallery img {
-  flex: 0 0 calc(50% - 6px);
+  flex: 0 0 auto;
   scroll-snap-align: start;
-  height: 320px;
+  height: 100%;
   width: auto;
-  max-width: none;
+  max-width: 82%;
   object-fit: contain;
   background: #000;
-  cursor: default;
+  cursor: zoom-in;
   border: 1px solid var(--gray-2);
+  transition: border-color 0.2s ease;
+}
+
+.modal-gallery img:hover {
+  border-color: var(--gray-3);
 }
 
 .gallery-arrow {
@@ -785,4 +796,804 @@ img {
 
 .modal-actions {
   margin-top: 28px;
+}
+
+/* ===== Panel lateral (Tienda) ===== */
+.side-nav {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  background: rgba(13, 13, 13, 0.92);
+  border: 1px solid var(--gray-2);
+  border-right: none;
+  border-radius: 14px 0 0 14px;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+}
+
+.side-nav-item {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  color: var(--gray-1);
+  white-space: nowrap;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.side-nav-item:hover,
+.side-nav-item.active {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.side-nav-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-nav-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.side-nav-label {
+  font-size: 13px;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  text-align: right;
+  transition: max-width 0.25s ease, opacity 0.2s ease;
+}
+
+.side-nav:hover .side-nav-label {
+  max-width: 120px;
+  opacity: 1;
+}
+
+@media (max-width: 720px) {
+  .side-nav {
+    top: auto;
+    bottom: 20px;
+    right: 12px;
+    left: auto;
+    transform: none;
+    border-radius: 14px;
+    border: 1px solid var(--gray-2);
+  }
+  .side-nav-item { padding: 12px; }
+  .side-nav-label,
+  .side-nav:hover .side-nav-label {
+    max-width: 0;
+    opacity: 0;
+  }
+}
+
+/* En la landing del juego el panel lateral tiene más íconos: reservamos
+   espacio para que el texto no quede oculto debajo en móvil */
+@media (max-width: 720px) {
+  .game-page section.wrap {
+    padding-right: 52px;
+  }
+
+  .game-page .game-hero-content,
+  .game-page footer.wrap {
+    padding-right: 20px;
+  }
+}
+
+/* ===== Tarjetas de Proyectos ===== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--panel);
+  border: 1px solid var(--gray-2);
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  font-family: inherit;
+  color: inherit;
+}
+
+.project-card:hover {
+  border-color: var(--white);
+  transform: translateY(-3px);
+}
+
+.project-card-cover {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+
+.project-card-body {
+  padding: 18px 20px;
+}
+
+.project-card-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.project-card-price {
+  font-size: 13px;
+  color: var(--gray-1);
+}
+
+/* Encabezado del modal con botones de compra */
+.modal-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-right: 40px;
+  margin-bottom: 18px;
+}
+
+.modal-header-row h3 {
+  margin: 0;
+  padding-right: 0;
+}
+
+.modal-buy-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.modal-buy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--white);
+  background: var(--white);
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.modal-buy-btn:hover {
+  background: transparent;
+  color: var(--white);
+}
+
+.modal-buy-btn.outline {
+  background: none;
+  color: var(--white);
+}
+
+.modal-buy-btn.outline:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* ===== Lightbox (zoom de capturas) ===== */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.95);
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  cursor: zoom-out;
+}
+
+.lightbox-overlay.open {
+  display: flex;
+}
+
+.lightbox-overlay img {
+  max-width: 92vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 1px solid var(--gray-2);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--gray-3);
+  background: none;
+  color: var(--white);
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  border-color: var(--white);
+}
+
+/* =========================================================
+   LANDING PAGE — ARAT-KZ
+   Acento propio (oro tallado) sobre la misma base del sitio.
+   ========================================================= */
+:root {
+  --gold: #c89b3c;
+  --gold-dim: #8a6b2a;
+  --gold-soft: rgba(200, 155, 60, 0.12);
+}
+
+.game-back {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  font-size: 13px;
+  color: var(--gray-1);
+}
+
+.game-back a:hover {
+  color: var(--white);
+}
+
+/* --- Hero --- */
+.game-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  background: #050403 center / cover no-repeat;
+  overflow: hidden;
+  border-bottom: 1px solid var(--gray-2);
+}
+
+/* Reemplaza esta imagen por tu arte clave: assets/aratkz-hero.jpg (1920×1200 o más, horizontal) */
+.game-hero {
+  background-image:
+    linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.2) 100%),
+    url('assets/aratkz-hero.jpg');
+}
+
+.game-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 32px 72px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.game-eyebrow {
+  font-size: 13px;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+
+.game-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(56px, 11vw, 140px);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  text-shadow: 0 0 60px var(--gold-soft);
+}
+
+.game-title span {
+  color: var(--gold);
+}
+
+.game-title-logo {
+  display: block;
+  width: min(480px, 70%);
+  height: auto;
+  filter: drop-shadow(0 0 60px var(--gold-soft));
+}
+
+.game-hook {
+  margin-top: 22px;
+  font-size: 18px;
+  color: var(--gray-1);
+  max-width: 540px;
+  line-height: 1.6;
+}
+
+.game-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.game-tag {
+  font-size: 12px;
+  color: var(--gray-1);
+  border: 1px solid var(--gray-3);
+  padding: 6px 12px;
+}
+
+.game-hero-actions {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn.gold {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #140f04;
+}
+
+.btn.gold:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+/* --- Secciones generales --- */
+.game-section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--gray-2);
+}
+
+.game-section .section-head h2 {
+  color: var(--white);
+}
+
+/* --- Lore: actos conectados por un hilo --- */
+.lore-list {
+  position: relative;
+  padding-left: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.lore-list::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 5px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold), var(--gray-2));
+}
+
+.lore-act {
+  position: relative;
+}
+
+.lore-act::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 6px;
+  width: 11px;
+  height: 11px;
+  background: var(--black);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+}
+
+.lore-act-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.lore-act h3 {
+  font-size: clamp(22px, 3vw, 30px);
+  margin-bottom: 14px;
+  max-width: 640px;
+}
+
+.lore-act p {
+  color: var(--gray-1);
+  font-size: 16px;
+  line-height: 1.75;
+  max-width: 640px;
+}
+
+/* --- Mecánicas: grid de tarjetas --- */
+.mechanic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  border-top: 1px solid var(--gray-2);
+  border-left: 1px solid var(--gray-2);
+}
+
+.mechanic-card {
+  background: var(--black);
+  padding: 32px;
+  border-right: 1px solid var(--gray-2);
+  border-bottom: 1px solid var(--gray-2);
+}
+
+.mechanic-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.mechanic-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.mechanic-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.mechanic-card p {
+  color: var(--gray-1);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.mechanic-card ul {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  color: var(--gray-1);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* --- HUD recreado --- */
+.hud-mockup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  padding: 36px;
+  background: var(--panel);
+  border: 1px solid var(--gray-2);
+}
+
+.hud-cluster {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1 1 200px;
+}
+
+.hud-cluster-row {
+  display: flex;
+  gap: 6px;
+}
+
+.hud-heart {
+  width: 22px;
+  height: 22px;
+  background: var(--panel);
+  border: 1.5px solid var(--gold);
+  transform: rotate(45deg);
+  position: relative;
+}
+
+.hud-heart::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--gold-dim);
+}
+
+.hud-corn {
+  width: 16px;
+  height: 24px;
+  border-radius: 50% 50% 40% 40%;
+  background: linear-gradient(180deg, #e8c75a, var(--gold-dim));
+  border: 1px solid var(--gold-dim);
+}
+
+.hud-bar {
+  width: 100%;
+  height: 10px;
+  background: var(--black);
+  border: 1px solid var(--gray-3);
+}
+
+.hud-bar-fill {
+  height: 100%;
+  width: 70%;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+}
+
+.hud-slots {
+  display: flex;
+  gap: 6px;
+}
+
+.hud-slot {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--gray-3);
+  background: var(--black);
+}
+
+.hud-cluster-label {
+  font-size: 13px;
+  color: var(--white);
+  margin-top: 4px;
+}
+
+.hud-cluster-desc {
+  font-size: 13px;
+  color: var(--gray-1);
+  line-height: 1.5;
+}
+
+.hud-icon-img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+}
+
+/* --- Historia: imagen de fondo del Acto I (el Cataclismo) --- */
+.lore-bg {
+  position: relative;
+  background: #050403 center / cover no-repeat;
+  overflow: hidden;
+}
+
+.lore-bg::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.72) 35%, rgba(0,0,0,0.9) 100%),
+    linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.85) 100%);
+}
+
+.lore-bg > .section-head,
+.lore-bg > .lore-list {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Panteón de dioses --- */
+.pantheon-tier {
+  display: flex;
+  gap: 24px;
+  padding: 40px 0;
+  border-top: 1px solid var(--gray-2);
+}
+
+.pantheon-tier:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.pantheon-bar {
+  flex: 0 0 3px;
+  background: var(--gray-2);
+}
+
+.pantheon-tier.rank-1 .pantheon-bar { background: var(--gold); }
+.pantheon-tier.rank-2 .pantheon-bar { background: var(--gold-dim); }
+.pantheon-tier.rank-3 .pantheon-bar { background: var(--gray-3); }
+.pantheon-tier.rank-4 .pantheon-bar { background: var(--gray-2); }
+
+.pantheon-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.pantheon-tier-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.pantheon-tier-desc {
+  font-size: 14px;
+  color: var(--gray-1);
+  max-width: 560px;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.deity-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.deity-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 52px 0;
+}
+
+.deity-row:first-child {
+  padding-top: 8px;
+}
+
+.deity-row:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: -6%;
+  right: -6%;
+  bottom: 0;
+  height: 1px;
+  background: var(--gray-2);
+  transform: rotate(-1.1deg);
+}
+
+.deity-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.deity-row.reverse:not(:last-child)::after {
+  transform: rotate(1.1deg);
+}
+
+.deity-photo {
+  flex: 0 0 48%;
+  width: 48%;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  overflow: hidden;
+  background: #0a0906;
+  border: 1px solid var(--gray-3);
+  clip-path: polygon(0 7%, 100% 0, 100% 93%, 0 100%);
+}
+
+.deity-row.reverse .deity-photo {
+  clip-path: polygon(0 0, 100% 7%, 100% 100%, 0 93%);
+}
+
+.deity-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  filter: grayscale(1) contrast(1.08);
+  transition: filter 0.4s ease;
+}
+
+.deity-photo.is-color img {
+  filter: grayscale(0) contrast(1.08);
+}
+
+.deity-photo.glitch-active img {
+  animation: heroGlitch 0.5s steps(8, end);
+}
+
+/* El mouse siempre gana: color de inmediato y sin glitch mientras esté encima */
+.deity-photo:hover img {
+  filter: grayscale(0) contrast(1.08) !important;
+  animation: none !important;
+}
+
+.deity-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.deity-row.reverse .deity-copy {
+  text-align: right;
+}
+
+.deity-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.deity-epithet {
+  font-size: 13px;
+  color: var(--gold);
+  margin: 4px 0 12px;
+}
+
+.deity-desc {
+  font-size: 15px;
+  color: var(--gray-1);
+  line-height: 1.65;
+  max-width: 460px;
+}
+
+.deity-row.reverse .deity-desc {
+  margin-left: auto;
+}
+
+/* --- Tráiler --- */
+.game-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid var(--gray-2);
+}
+
+.game-video video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+/* --- CTA final --- */
+.game-cta {
+  padding: 88px 0;
+  text-align: left;
+}
+
+.game-cta h2 {
+  font-size: clamp(28px, 4.5vw, 44px);
+  max-width: 620px;
+  margin-bottom: 16px;
+}
+
+.game-cta p {
+  color: var(--gray-1);
+  max-width: 480px;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+  .game-back { padding-top: 96px; }
+  .game-hero { min-height: 100vh; }
+  .lore-list { padding-left: 24px; }
+  .lore-act::before { left: -24px; }
+  .hud-mockup { padding: 24px; gap: 24px; }
+  .game-title-logo { width: 84%; }
+
+  .deity-row,
+  .deity-row.reverse {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 36px 0;
+  }
+
+  .deity-row.reverse .deity-copy,
+  .deity-row.reverse .deity-desc {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .deity-photo,
+  .deity-row.reverse .deity-photo {
+    width: 100%;
+    flex: none;
+    aspect-ratio: 4 / 4.2;
+    clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
+  }
+
+  .deity-row:not(:last-child)::after {
+    left: 0;
+    right: 0;
+    transform: none;
+  }
 }
